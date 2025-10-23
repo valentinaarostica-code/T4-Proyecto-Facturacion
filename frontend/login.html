@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: #f5f6fa;
+    }
+
+    /* Barra superior */
+    header {
+      background-color: #003366;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 120px 30px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    .top-buttons button {
+      background-color: #00aaff;
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .top-buttons button:hover {
+      background-color: #0088cc;
+    }
+
+    /* Contenedor principal */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+      gap: 60px;
+    }
+
+    .container img {
+      width: 700px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    /* Tarjeta de inicio de sesión */
+    .login-card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+
+    .login-card h2 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    .login-card input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .login-card a {
+      display: block;
+      text-align: right;
+      font-size: 13px;
+      color: #0066cc;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    .login-card button {
+      width: 100%;
+      padding: 10px;
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .login-card button:hover {
+      background-color: #0088cc;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Facturyn</h1>
+    <div class="top-buttons">
+     <button onclick="window.location.href='registro.html'">Regístrate</button>
+     <button onclick="window.location.href='login.html'">Ingresar</button>
+    </div>
+
+  </header>
+
+  <main class="container">
+    <img src="imagen_full_hd.jpg" alt="Imagen login">
+
+    <div class="login-card">
+      <h2>Bienvenido</h2>
+      <form>
+        <input type="email" placeholder="Correo electrónico" required>
+        <input type="password" placeholder="Contraseña" required>
+        <a href="#">¿Olvidaste tu contraseña?</a>
+        <button type="submit">Iniciar sesión</button>
+      </form>
+      <script>
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+         e.preventDefault(); // Evita que recargue la página
+
+    // Aquí podrías validar el usuario/contraseña (más adelante con backend)
+    // Por ahora simulamos que está correcto
+    window.location.href = "../Frontend/colaboradores.html";
+  });
+</script>
+    </div>
+  </main>
+</body>
+</html>
+
+

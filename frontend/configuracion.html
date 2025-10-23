@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facturyn | Configuración</title>
+  <style>
+    /* --- Estilos generales --- */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      background-color: #f5f7fb;
+      color: #333;
+    }
+
+    /* --- Sidebar --- */
+    .sidebar {
+      width: 230px;
+      background-color: #0a1f44;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      padding-top: 1rem;
+    }
+
+    .sidebar button {
+      background-color: #007bff;
+      border: none;
+      color: white;
+      padding: 12px;
+      margin: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: left;
+      transition: 0.3s;
+    }
+
+    .sidebar button:hover {
+      background-color: #0056b3;
+    }
+
+
+    /* --- Main --- */
+    .main {
+      flex: 1;
+      padding: 25px 40px;
+    }
+      /* Encabezado */
+    .header {
+      margin-left: 200px;
+      background-color: white;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #e0e0e0;
+    }
+ 
+    header h1 {
+      color: #007bff;
+      margin: 0;
+    }
+
+    /* --- Contenedores --- */
+    .config-container {
+      background-color: #0a1f44;
+      color: white;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+    }
+
+    .config-container h3 {
+      margin-top: 0;
+    }
+
+    .config-container label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .config-container input,
+    .config-container select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      margin-bottom: 15px;
+    }
+
+    .config-container button {
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .config-container button:hover {
+      background-color: #008ecc;
+    }
+
+    /* --- Secciones lado a lado --- */
+    .config-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    @media (max-width: 800px) {
+      .config-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <button onclick="location.href='colaboradores.html'">Colaboradores</button>
+    <button onclick="location.href='facturas.html'">Facturas</button>
+    <button onclick="location.href='productos.html'">Productos</button>
+    <button onclick="location.href='reportes.html'">Reportes</button>
+    <button onclick="location.href='configuracion.html'">Configuración</button>
+  </aside>
+
+  <!-- Contenido principal -->
+  <main class="main">
+    <header>
+      <h1>Facturyn</h1>
+      <p><strong>Administrador</strong></p>
+    </header>
+
+    <h2>Configuración del sistema</h2>
+
+    <div class="config-grid">
+      <!-- Configuración de cuenta -->
+      <section class="config-container">
+        <h3>👤 Ajustes de cuenta</h3>
+        <label>Nombre de usuario:</label>
+        <input type="text" placeholder="Ej. Admin01">
+        
+        <label>Correo electrónico:</label>
+        <input type="email" placeholder="correo@facturyn.cl">
+        
+        <label>Contraseña:</label>
+        <input type="password" placeholder="••••••••">
+        
+        <button>Actualizar cuenta</button>
+      </section>
+
+      <!-- Preferencias del sistema -->
+      <section class="config-container">
+        <h3>⚙️ Preferencias del sistema</h3>
+        <label>Tema de la interfaz:</label>
+        <select>
+          <option>Claro</option>
+          <option>Oscuro</option>
+        </select>
+
+        <label>Idioma:</label>
+        <select>
+          <option>Español</option>
+          <option>Inglés</option>
+        </select>
+
+        <label>Notificaciones:</label>
+        <select>
+          <option>Activadas</option>
+          <option>Desactivadas</option>
+        </select>
+
+        <button>Guardar cambios</button>
+      </section>
+    </div>
+
+    <!-- Configuración adicional -->
+    <section class="config-container">
+      <h3>🧾 Datos de la empresa</h3>
+      <label>Nombre de la empresa:</label>
+      <input type="text" placeholder="Facturyn SpA">
+      
+      <label>RUT:</label>
+      <input type="text" placeholder="76.123.456-7">
+      
+      <label>Dirección:</label>
+      <input type="text" placeholder="Av. Principal 123, Santiago">
+      
+      <button>Guardar información</button>
+    </section>
+
+  </main>
+
+</body>
+</html>

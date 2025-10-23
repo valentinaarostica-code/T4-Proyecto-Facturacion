@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - Facturyn</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: #f5f6fa;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 30px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    .top-buttons button {
+      background-color: #00aaff;
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .top-buttons button:hover {
+      background-color: #0088cc;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+      gap: 60px;
+    }
+
+    .container img {
+      width: 700px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .register-card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      width: 320px;
+    }
+
+    .register-card h2 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    .register-card label {
+      font-size: 14px;
+      color: #003366;
+    }
+
+    .register-card input {
+      width: 100%;
+      padding: 9px;
+      margin: 8px 0 15px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .register-card button {
+      width: 100%;
+      padding: 10px;
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .register-card button:hover {
+      background-color: #0088cc;
+    }
+
+    .register-card .terms {
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 15px;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Facturyn</h1>
+    <div class="top-buttons">
+        <button onclick="window.location.href='registro.html'">Regístrate</button>
+        <button onclick="window.location.href='login.html'">Ingresar</button>
+    </div>
+
+  </header>
+
+  <main class="container">
+    <img src="imagen_full_hd.jpg" alt="Imagen registro">
+
+    <div class="register-card">
+      <h2>Bienvenido</h2>
+      <form>
+        <label>Datos de empresa</label>
+        <input type="text" placeholder="Nombre de la empresa" required>
+        <input type="text" placeholder="RUT de la empresa" required>
+
+        <label>Datos del administrador</label>
+        <input type="text" placeholder="Nombre completo" required>
+        <input type="email" placeholder="Correo electrónico" required>
+        <input type="password" placeholder="Contraseña" required>
+        <input type="password" placeholder="Confirmar contraseña" required>
+
+        <div class="terms">
+          <input type="checkbox" required> <span>Acepto los términos y condiciones</span>
+    
+        </div>
+
+        <button type="submit">Crear cuenta</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

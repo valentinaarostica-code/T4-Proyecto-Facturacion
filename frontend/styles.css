@@ -1,0 +1,145 @@
+/* --- Sección 4: Gestión de colaboradores --- */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f7f9fb;
+  color: #222;
+}
+
+/* --- Barra lateral --- */
+.sidebar {
+  background-color: #0a1f44;
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  background-color: #1089ff;
+  padding: 10px;
+  margin: 6px 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #0a6ad4;
+}
+
+/* --- Encabezado --- */
+.header {
+  margin-left: 200px;
+  background-color: white;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.header h1 {
+  color: #1089ff;
+  margin: 0;
+}
+
+.header span {
+  font-weight: 600;
+}
+
+/* --- Contenido --- */
+.main {
+  margin-left: 200px;
+  padding: 25px;
+}
+
+h2 {
+  color: #0a1f44;
+  border-bottom: 2px solid #1089ff;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/* --- Botones y formularios --- */
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  margin: 5px 0 10px 0;
+}
+
+button {
+  background-color: #1089ff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0a6ad4;
+}
+
+/* --- Paneles --- */
+.panel {
+  background-color: #0a1f44;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* --- Tablas --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #eaf2fb;
+  color: #0a1f44;
+  padding: 10px;
+  text-align: left;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Estados */
+.estado-pendiente {
+  background-color: #f9dc5c;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+.estado-pagada {
+  background-color: #8de67f;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: #0a1f44;
+  font-weight: bold;
+}
+
+/* Pequeños círculos de acción */
+.acciones span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: 0 3px;
+}
+.azul { background-color: #1089ff; }
+.verde { background-color: #8de67f; }
+.rojo { background-color: #e63946; }
