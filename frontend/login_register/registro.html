@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Facturación - Registro</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <!-- Barra superior -->
+    <header class="navbar">
+        <h1 class="logo">FACTURYN</h1>
+        <div class="nav-buttons">
+            <button class="btn-secundario" onclick="window.location.href='registro.html'">Regístrate</button>
+            <button class="btn-principal" onclick="window.location.href='login.html'">Ingresar</button>
+        </div>
+    </header>
+
+    <!-- Contenedor principal -->
+    <main class="main-container">
+        <div class="image-container">
+            <img src="imagen_full_hd.jpg" alt="Persona analizando gráficos">
+        </div>
+
+        <div class="form-container">
+            <h2>Bienvenido</h2>
+            <div class="tab">
+                <button onclick="window.location.href='login.html'">Iniciar sesión</button>
+                <button class="active">Registrarse</button>
+            </div>
+
+            <form>
+                <h3 class="form-section">Datos de empresa</h3>
+                <label for="empresa">Nombre de la empresa</label>
+                <input type="text" id="empresa" placeholder="Ej: FacturaTech SpA" required>
+
+                <label for="rut">RUT de la empresa</label>
+                <input type="text" id="rut" placeholder="Ej: 76.123.456-7" required>
+
+                <label for="giro">Giro comercial</label>
+                <input type="text" id="giro" placeholder="Ej: Servicios informáticos" required>
+
+                <h3 class="form-section">Datos del administrador</h3>
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" placeholder="Ej: usuario@empresa.cl" required>
+
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena" placeholder="Mínimo 6 caracteres" minlength="6" required>
+
+                <label for="confirmar">Confirmar contraseña</label>
+                <input type="password" id="confirmar" placeholder="Repite tu contraseña" required>
+
+                <div class="terminos">
+                    <input type="checkbox" id="acepto" required>
+                    <label for="acepto">Acepto los términos y condiciones</label>
+                </div>
+
+                <button type="submit" class="btn-principal ancho">Crear cuenta</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
+
