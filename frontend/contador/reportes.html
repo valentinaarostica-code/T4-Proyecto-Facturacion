@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Facturyn | Reportes</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../administrador/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <!-- Librería de gráficos -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -23,7 +24,7 @@
 
   <!-- ====== Contenido principal ====== -->
   <div class="content">
-    <h2 class="titulo-reportes">Panel de reportes</h2>
+    <h2 class="titulo-reportes">Gestion de reportes</h2>
 
     <!-- ====== Estadísticas globales ====== -->
     <div class="stats-box">
@@ -37,29 +38,46 @@
       </div>
       <div class="stat">
         <h3>0</h3>
-        <p>Productos activos</p>
+        <p>Productos en inventario</p>
       </div>
     </div>
 
-    <!-- ====== Filtro de reportes ====== -->
-    <div class="add-box">
-      <h3>Filtrar reportes</h3>
-      <div class="form-inline">
-        <label>
-          Periodo:
-          <input type="month" />
-        </label>
-        <button class="btn-principal"><i class="fa-solid fa-filter"></i> Filtrar</button>
+  <!-- ====== Filtro de reportes ====== -->
+      <div class="add-box">
+        <h3>Filtrar reportes</h3>
+        <div class="form-inline-vertical">
+          <input type="date" placeholder="Desde" />
+          <input type="date" placeholder="Hasta" />
+          <input type="text" placeholder="Nombre o RUT del cliente" />
+          <input type="text" placeholder="Producto" />
+          <select>
+            <option value="">Estado</option>
+            <option value="pagada">Pagada</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="anulada">Anulada</option>
+          </select>
+          <select>
+            <option value="">Método de pago</option>
+            <option value="Efectivo">Efectivo</option>
+            <option value="Transferencia">Transferencia</option>
+            <option value="Debito">Debito</option>
+            <option value="Credito">Credito</option>
+            <option value="Cheque">Cheque</option>
+          </select>
+          <button class="btn-principal">
+            <i class="fa-solid fa-filter"></i> Filtrar
+          </button>
+        </div>
       </div>
-    </div>
 
-    <!-- ====== Gráfico de ventas ====== -->
+
+    <!-- ====== Gráficos ====== -->
     <div class="graph-box">
       <h3>Resumen visual de ventas</h3>
       <canvas id="ventasChart"></canvas>
     </div>
 
-    <!-- ====== Tabla de ventas por categoría ====== -->
+    <!-- ====== Ventas por categoría ====== -->
     <div class="table-box">
       <h3>Ventas por categoría</h3>
       <table>
@@ -68,7 +86,7 @@
             <th>Categoría</th>
             <th>Ventas</th>
             <th>Porcentaje</th>
-            <th>Acción</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -76,19 +94,24 @@
             <td>Servicios</td>
             <td>$120.000</td>
             <td>60%</td>
-            <td><button class="btn-accion ver"><i class="fa-solid fa-eye"></i></button></td>
+            <td>
+              <button class="btn-accion ver"><i class="fa-solid fa-eye"></i></button>
+            </td>
           </tr>
           <tr>
             <td>Productos</td>
             <td>$80.000</td>
             <td>40%</td>
-            <td><button class="btn-accion ver"><i class="fa-solid fa-eye"></i></button></td>
+            <td>
+              <button class="btn-accion ver"><i class="fa-solid fa-eye"></i></button>
+              <button class="btn-accion eliminar"><i class="fa-solid fa-trash"></i></button>
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <!-- ====== Tabla de ventas mensuales ====== -->
+    <!-- ====== Ventas mensuales ====== -->
     <div class="table-box">
       <h3>Ventas mensuales</h3>
       <table>
@@ -97,7 +120,6 @@
             <th>Mes</th>
             <th>Monto de venta</th>
             <th>N° Facturas</th>
-            <th>Acción</th>
           </tr>
         </thead>
         <tbody>
@@ -105,13 +127,11 @@
             <td>Enero</td>
             <td>$200.000</td>
             <td>15</td>
-            <td><button class="btn-accion ver"><i class="fa-solid fa-eye"></i></button></td>
           </tr>
           <tr>
             <td>Febrero</td>
             <td>$150.000</td>
             <td>12</td>
-            <td><button class="btn-accion ver"><i class="fa-solid fa-eye"></i></button></td>
           </tr>
         </tbody>
       </table>
@@ -119,7 +139,7 @@
 
   </div>
 
-  <!-- ====== Script del gráfico ====== -->
+  <!-- ====== Script para gráficos ====== -->
   <script>
     const ctx = document.getElementById('ventasChart');
     new Chart(ctx, {

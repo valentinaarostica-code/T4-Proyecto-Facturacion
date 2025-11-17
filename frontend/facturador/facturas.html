@@ -43,6 +43,7 @@
         <div class="form-inline-vertical">
           <input type="text" placeholder="N° factura" />
           <input type="text" placeholder="Nombre de cliente" />
+          <input type="text" placeholder="RUT del cliente" />
           <select>
             <option value="">Estado</option>
             <option value="pendiente">Pendiente</option>
@@ -61,6 +62,8 @@
         <h3>Generar nueva factura</h3>
         <div class="form-inline-vertical">
           <input type="text" placeholder="Nombre cliente" />
+          <input type="text" placeholder="RUT del cliente" />
+          <input type="text" placeholder="Domicilio del cliente" />
           <input type="text" placeholder="N° factura" />
           <select>
             <option value="">Estado</option>
@@ -82,7 +85,15 @@
           <input type="number" placeholder="Cantidad" />
           <input type="number" placeholder="Precio unitario" />
           <input type="number" placeholder="Precio total" />
-          <input type="text" placeholder="Método de pago" />
+          <input type="number" placeholder="IVA aplicado" />
+           <select>
+            <option value="">Método de pago</option>
+            <option value="Efectivo">Efectivo</option>
+            <option value="Transferencia">Transferencia</option>
+            <option value="Debito">Debito</option>
+            <option value="Credito">Credito</option>
+            <option value="Cheque">Cheque</option>
+          </select>
           <textarea placeholder="Descripción breve"></textarea>
 
           <div class="form-actions-row">

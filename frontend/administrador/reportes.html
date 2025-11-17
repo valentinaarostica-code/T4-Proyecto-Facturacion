@@ -14,6 +14,7 @@
   <!-- ====== Barra lateral ====== -->
   <div class="sidebar">
     <button onclick="window.location.href='colaboradores.html'">Colaboradores</button>
+    <button onclick="window.location.href='clientes.html'">Clientes</button>
     <button onclick="window.location.href='facturas.html'">Facturas</button>
     <button onclick="window.location.href='productos.html'">Productos</button>
     <button class="active">Reportes</button>
@@ -46,17 +47,34 @@
       </div>
     </div>
 
-    <!-- ====== Filtro de reportes ====== -->
-    <div class="add-box">
-      <h3>Filtrar reportes</h3>
-      <div class="form-inline">
-        <label>
-          Periodo:
-          <input type="month" />
-        </label>
-        <button class="btn-principal"><i class="fa-solid fa-filter"></i> Filtrar</button>
+  <!-- ====== Filtro de reportes ====== -->
+      <div class="add-box">
+        <h3>Filtrar reportes</h3>
+        <div class="form-inline-vertical">
+          <input type="date" placeholder="Desde" />
+          <input type="date" placeholder="Hasta" />
+          <input type="text" placeholder="Nombre o RUT del cliente" />
+          <input type="text" placeholder="Producto" />
+          <select>
+            <option value="">Estado</option>
+            <option value="pagada">Pagada</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="anulada">Anulada</option>
+          </select>
+          <select>
+            <option value="">Método de pago</option>
+            <option value="Efectivo">Efectivo</option>
+            <option value="Transferencia">Transferencia</option>
+            <option value="Debito">Debito</option>
+            <option value="Credito">Credito</option>
+            <option value="Cheque">Cheque</option>
+          </select>
+          <button class="btn-principal">
+            <i class="fa-solid fa-filter"></i> Filtrar
+          </button>
+        </div>
       </div>
-    </div>
+
 
     <!-- ====== Gráficos ====== -->
     <div class="graph-box">
