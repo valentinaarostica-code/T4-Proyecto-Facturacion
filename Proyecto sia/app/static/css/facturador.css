@@ -1,0 +1,65 @@
+/* ====== Ajustes específicos del FACTURADOR ====== */
+
+/* Solo muestra Facturas y Productos */
+.sidebar button:nth-child(n+3) {
+  display: none;
+}
+
+/* Corrige alineación del título */
+.titulo-facturas {
+  margin-top: -10px;
+  font-size: 1.6rem;
+  color: #0c2d57;
+  margin-bottom: 25px;
+}
+
+/* Oculta acciones no permitidas */
+.btn-accion.eliminar,
+.btn-accion.editar,
+.btn-accion.guardar {
+  display: none;
+}
+
+/* Estilo para el rol */
+.user-role {
+  color: #555;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====== Personalización del FACTURADOR ====== */
+
+/* Ocultar botones del sidebar que no corresponden */
+.sidebar button:nth-child(n+3) {
+  display: none;
+}
+
+/* Ajuste de títulos (alineados con los del administrador) */
+.titulo-facturas {
+  margin-top: -10px;
+  font-size: 1.6rem;
+  color: #0c2d57;
+  margin-bottom: 25px;
+}
+
+/* Estilo del rol */
+.user-role {
+  color: #555;
+  font-weight: bold;
+}
+
+/* Mantener todas las acciones disponibles en productos */
+.table-box .btn-accion.editar,
+.table-box .btn-accion.eliminar {
+  display: inline-block;
+}

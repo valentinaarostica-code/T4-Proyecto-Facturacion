@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Facturyn | Configuración</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+
+  <!-- ====== Barra lateral ====== -->
+  <div class="sidebar">
+    <button onclick="window.location.href='colaboradores.html'">Colaboradores</button>
+    <button onclick="window.location.href='facturas.html'">Facturas</button>
+    <button onclick="window.location.href='productos.html'">Productos</button>
+    <button onclick="window.location.href='reportes.html'">Reportes</button>
+    <button class="active">Configuración</button>
+  </div>
+
+  <!-- ====== Barra superior ====== -->
+  <div class="topbar">
+    <h1>FACTURYN</h1>
+    <span class="user-role">Administrador</span>
+  </div>
+
+  <!-- ====== Contenido principal ====== -->
+  <div class="content">
+    <h2 class="titulo-facturas">Configuración</h2>
+
+    <!-- ====== Datos de la empresa ====== -->
+    <div class="config-box">
+      <h3>Datos de la empresa</h3>
+      <form class="form-inline-vertical">
+        <input type="text" placeholder="Nombre de la empresa" />
+        <input type="text" placeholder="Rut de la empresa" />
+        <input type="text" placeholder="Giro comercial" />
+        <input type="text" placeholder="Teléfono" />
+        <input type="text" placeholder="Dirección" />
+        <div class="form-actions-row">
+          <button class="btn-principal"><i class="fa-solid fa-rotate"></i> Actualizar</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- ====== Datos del administrador ====== -->
+    <div class="config-box">
+      <h3>Datos del administrador</h3>
+      <form class="form-inline-vertical">
+        <input type="text" placeholder="Nombre del administrador" />
+        <input type="email" placeholder="Correo electrónico" />
+        <input type="password" placeholder="Contraseña actual" />
+        <input type="password" placeholder="Contraseña nueva" />
+        <input type="password" placeholder="Confirmar contraseña" />
+        <div class="form-actions-row">
+          <button class="btn-principal"><i class="fa-solid fa-rotate"></i> Actualizar</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</body>
+</html>

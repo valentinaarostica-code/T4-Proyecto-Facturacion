@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facturyn | Colaboradores</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- ====== Barra lateral ====== -->
+  <div class="sidebar">
+    <button class="active">Colaboradores</button>
+   <button onclick="window.location.href='{{ url_for('admin.clientes') }}'">Clientes</button>
+    <button onclick="window.location.href='../admin/facturas.html'">Facturas</button>
+    <button onclick="window.location.href='productos.html'">Productos</button>
+    <button onclick="window.location.href='reportes.html'">Reportes</button>
+    <button onclick="window.location.href='configuracion.html'">Configuración</button>
+  </div>
+
+  <!-- ====== Encabezado superior ====== -->
+  <div class="topbar">
+    <h1>FACTURYN</h1>
+    <span class="user-role">Administrador</span>
+  </div>
+
+  <!-- ====== Contenido principal ====== -->
+  <div class="content">
+    <h2 class="titulo-colaboradores">Gestión de colaboradores</h2>
+
+    <!-- Tarjetas de estadísticas -->
+    <div class="stats-box">
+      <div class="stat">
+        <h3>0</h3>
+        <p>Total de colaboradores</p>
+      </div>
+      <div class="stat">
+        <h3>0</h3>
+        <p>Facturadores</p>
+      </div>
+      <div class="stat">
+        <h3>0</h3>
+        <p>Contadores</p>
+      </div>
+    </div>
+
+    <!-- Agregar colaborador -->
+    <div class="add-box">
+      <h3>Agregar nuevo colaborador</h3>
+      <div class="form-inline">
+        <input type="email" placeholder="Email del colaborador">
+        <select>
+          <option value="">Seleccionar rol</option>
+          <option value="facturador">Facturador</option>
+          <option value="contador">Contador</option>
+        </select>
+        <button class="btn-principal">+ Agregar</button>
+      </div>
+    </div>
+
+    <!-- Tabla de colaboradores -->
+    <div class="table-box">
+      <h3>Colaboradores actuales</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Usuario</th>
+            <th>Email</th>
+            <th>Rol</th>
+            <th>Fecha de ingreso</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>nombre1</td>
+            <td>emailusuario1@gmail.com</td>
+            <td>Contador</td>
+            <td>xx/xx/xxxx</td>
+            <td><button class="btn-eliminar">Eliminar</button></td>
+          </tr>
+          <tr>
+            <td>nombre2</td>
+            <td>emailusuario2@gmail.com</td>
+            <td>Facturador</td>
+            <td>xx/xx/xxxx</td>
+            <td><button class="btn-eliminar">Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>
