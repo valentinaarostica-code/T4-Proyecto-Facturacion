@@ -1,0 +1,232 @@
+/* ====== Configuración general ====== */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6fa;
+}
+
+/* ====== Barra lateral ====== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 230px;
+  background-color: #0c2d57;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 0;
+  height: 100vh;
+}
+
+.sidebar button {
+  background: none;
+  color: white;
+  border: none;
+  text-align: left;
+  padding: 14px 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.sidebar button:hover,
+.sidebar button.active {
+  background-color: #184b8a;
+}
+
+/* ====== Barra superior ====== */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 230px;
+  right: 0;
+  height: 65px;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 10;
+}
+
+.topbar h1 {
+  color: #0c2d57;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.user-role {
+  color: #555;
+  font-weight: 500;
+}
+
+/* ====== Contenido ====== */
+.content {
+  margin-left: 230px;
+  margin-top: 85px;
+  padding: 20px 30px;
+  width: calc(100% - 230px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.content > * {
+  max-width: 1000px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ====== Título ====== */
+h2.titulo-reportes {
+  color: #0c2d57;
+  margin-bottom: 20px;
+  margin-top: -5px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ====== Tarjetas de estadísticas ====== */
+.stats-box {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.stat {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+.stat h3 {
+  color: #0c2d57;
+  font-size: 1.6rem;
+  margin: 10px 0;
+}
+
+.stat p {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* ====== Cuadro filtro ====== */
+.add-box {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.add-box h3 {
+  color: #0c2d57;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.form-inline input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  flex: 1;
+}
+
+.btn-principal {
+  background-color: #0c2d57;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-principal:hover {
+  background-color: #184b8a;
+}
+
+/* ====== Tabla ====== */
+.table-box {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.table-box h3 {
+  color: #0c2d57;
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #0c2d57;
+  color: white;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ffffff;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.btn-accion.ver {
+  background-color: #17a2b8;
+  border: none;
+  padding: 7px 9px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-accion.ver:hover {
+  opacity: 0.9;
+}
+
+/* ====== Gráfico ====== */
+.graph-box {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.graph-box h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.graph-box canvas {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}

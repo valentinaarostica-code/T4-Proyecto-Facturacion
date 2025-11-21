@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facturyn | Colaboradores</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- ====== Barra lateral ====== -->
+  <div class="sidebar">
+    <button class="active" onclick="window.location.href='{{ url_for('admin.colaboradores') }}'">Colaboradores</button>
+    <button onclick="window.location.href='{{ url_for('admin.clientes') }}'">Clientes</button>
+    <button onclick="window.location.href='{{ url_for('admin.facturas') }}'">Facturas</button>
+    <button onclick="window.location.href='{{ url_for('admin.productos') }}'">Productos</button>
+    <button onclick="window.location.href='{{ url_for('admin.reportes') }}'">Reportes</button>
+    <button onclick="window.location.href='{{ url_for('admin.configuracion') }}'">Configuración</button>
+  </div>
+
+  <!-- ====== Encabezado superior ====== -->
+  <div class="topbar">
+    <h1>FACTURYN</h1>
+    <span class="user-role">{{ session.get('rol', 'Invitado') }}</span>
+  </div>
+
+  <!-- ====== Contenido principal ====== -->
+  <div class="content">
+    <h2 class="titulo-colaboradores">Gestión de colaboradores</h2>
+
+    <!-- Tarjetas de estadísticas -->
+    <div class="stats-box">
+      <div class="stat">
+        <h3>0</h3>
+        <p>Total de colaboradores</p>
+      </div>
+      <div class="stat">
+        <h3>0</h3>
+        <p>Facturadores</p>
+      </div>
+      <div class="stat">
+        <h3>0</h3>
+        <p>Contadores</p>
+      </div>
+    </div>
+
+    <!-- Agregar colaborador -->
+    <div class="add-box">
+      <h3>Agregar nuevo colaborador</h3>
+      <form action="{{ url_for('admin.colaboradores') }}" method="POST" class="form-inline">
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
+        <input type="email" name="email" placeholder="Email del colaborador" required>
+        <input type="password" name="contrasena" placeholder="Contraseña" required>
+        <select name="rol" required>
+          <option value="">Seleccionar rol</option>
+          <option value="facturador">Facturador</option>
+          <option value="contador">Contador</option>
+        </select>
+        <button type="submit" class="btn-principal">+ Agregar</button>
+      </form>
+    </div>
+
+    <!-- Tabla de colaboradores -->
+    <div class="table-box">
+      <h3>Colaboradores actuales</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Usuario</th>
+            <th>Email</th>
+            <th>Rol</th>
+            <th>Fecha de ingreso</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for colaborador in colaboradores %}
+          <tr>
+            <td>{{ colaborador.nombre }}</td>
+            <td>{{ colaborador.email }}</td>
+            <td>{{ colaborador.rol }}</td>
+            <td>{{ colaborador.fecha_ingreso }}</td>
+            <td><button class="btn-eliminar">Eliminar</button></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>

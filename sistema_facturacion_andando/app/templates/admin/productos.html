@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Facturyn | Facturas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}" />
+  <!-- Font Awesome CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+
+  <!-- ====== Barra lateral ====== -->
+  <div class="sidebar">
+    <button onclick="window.location.href='{{ url_for('admin.colaboradores') }}'">Colaboradores</button>
+    <button class="active" onclick="window.location.href='{{ url_for('admin.facturas') }}'">Facturas</button>
+    <button onclick="window.location.href='{{ url_for('admin.productos') }}'">Productos</button>
+    <button onclick="window.location.href='{{ url_for('admin.reportes') }}'">Reportes</button>
+    <button onclick="window.location.href='{{ url_for('admin.configuracion') }}'">Configuración</button>
+  </div>
+
+  <!-- ====== Barra superior ====== -->
+  <div class="topbar">
+    <h1>FACTURYN</h1>
+    <span class="user-role">Administrador</span>
+  </div>
+
+  <!-- ====== Contenido principal ====== -->
+  <div class="content">
+    <h2 class="titulo-facturas">Gestión de facturas</h2>
+
+    <!-- ====== Sección Buscar / Agregar ====== -->
+    <div class="top-section">
+      <!-- Buscar factura -->
+      <div class="search-box">
+        <h3>Buscar factura</h3>
+        <div class="form-inline-vertical">
+          <input type="text" placeholder="N° factura" />
+          <input type="text" placeholder="Nombre de cliente" />
+          <select>
+            <option value="">Estado</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="pagada">Pagada</option>
+          </select>
+          <div class="form-actions-row">
+            <button class="btn-principal"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agregar factura -->
+      <div class="add-box-factura">
+        <h3>Agregar factura</h3>
+        <div class="form-inline-vertical">
+          <input type="text" placeholder="Nombre cliente" />
+          <input type="text" placeholder="N° factura" />
+          <select>
+            <option value="">Estado</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="pagada">Pagada</option>
+          </select>
+          <div class="date-row">
+            <label>
+              Fecha emisión
+              <input type="date" />
+            </label>
+            <label>
+              Fecha vencimiento
+              <input type="date" />
+            </label>
+          </div>
+
+          <input type="text" placeholder="Producto" />
+          <input type="number" placeholder="Cantidad" />
+          <input type="number" placeholder="Precio unitario" />
+          <input type="number" placeholder="Precio total" />
+          <input type="text" placeholder="Método de pago" />
+          <textarea placeholder="Descripción breve"></textarea>
+
+          <div class="form-actions-row">
+            <button class="btn-principal"><i class="fa-solid fa-plus"></i> Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== Tabla de facturas ====== -->
+    <div class="table-box">
+      <h3>Listado de facturas</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>N° Factura</th>
+            <th>Cliente</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Estado</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>FAC-001</td>
+            <td>Cliente 1</td>
+            <td>Producto X</td>
+            <td>$50.000</td>
+            <td><span class="estado alto">Pagada</span></td>
+            <td>01/11/2025</td>
+            <td class="acciones">
+              <button class="btn-accion editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
+              <button class="btn-accion ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
+              <button class="btn-accion guardar" title="Guardar"><i class="fa-solid fa-floppy-disk"></i></button>
+              <button class="btn-accion eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>FAC-002</td>
+            <td>Cliente 2</td>
+            <td>Producto Y</td>
+            <td>$30.000</td>
+            <td><span class="estado bajo">Pendiente</span></td>
+            <td>02/11/2025</td>
+            <td class="acciones">
+              <button class="btn-accion editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
+              <button class="btn-accion ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
+              <button class="btn-accion guardar" title="Guardar"><i class="fa-solid fa-floppy-disk"></i></button>
+              <button class="btn-accion eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</body>
+</html>
